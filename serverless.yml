@@ -28,6 +28,17 @@ functions:                          		# Sekcija koja definiše Lambda funkcije
           path: sync                		# Putanja: /sync
           method: get               		# HTTP metoda: GET
 
+  getChargersByTown:
+    handler: index.getChargersByTown
+    description: Get chargers by town from DynamoDB (TownIndex)
+    role: SyncOCMDataRole
+    events:
+      - http:
+          path: chargers/{town}
+          method: get
+          cors: true
+
+
 resources:                          		# CloudFormation resursi sekcija
   Resources:                        		# AWS resursi za kreiranje
     ChargersTable:                  		# Logičko ime resursa 
