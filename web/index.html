@@ -139,9 +139,16 @@
     <script>
       // KONFIGURACIJA - promeni API_ID ako treba
       // Dobij sa: awslocal apigateway get-rest-apis --query 'items[0].id' --output text
-      const API_ID = '';
+      //const API_ID = '';
      // const API_BASE_URL = `http://localhost:4566/restapis/${API_ID}/dev/_user_request_`;
-      const API_BASE_URL = 'http://localhost:4566/restapis/tqsuotz4hd/dev/_user_request_';
+      //const API_BASE_URL = 'http://localhost:4566/restapis/tqsuotz4hd/dev/_user_request_';
+      // Nakon deploy-a pokreni: npx serverless info
+      // Iz output-a kopiraj API ID (deo između /restapis/ i /dev)
+      // i nalepi ga ovde:
+      const API_ID = 'PASTE_API_ID_HERE';
+
+      const API_BASE_URL = `http://localhost:4566/restapis/${API_ID}/dev/_user_request_`;
+
       
       // Inicijalizuj mapu (centrirana na Srbiju)
       const map = L.map('map').setView([44.0165, 21.0059], 7);
